@@ -106,7 +106,7 @@ class HTTPClient(object):
                   "Connection: close\r\n" \
                   "Accept: */*\r\n" \
                   "Accept-Encoding: */*\r\n" \
-                 f"User-Agent: {self.USER_AGENT}\r\n"
+                  f"User-Agent: {self.USER_AGENT}\r\n"
         if post:
             request += "Content-Type: application/x-www-form-urlencoded\r\n"
         if not content_length == None:
@@ -124,7 +124,6 @@ class HTTPClient(object):
         return HTTPResponse(code, body)
 
     def POST(self, url, args=None):
-
         host, port, resource = self.parse_request_url(url)
         try:
             post_body =  urllib.parse.urlencode(args)
